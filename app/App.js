@@ -1,3 +1,36 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Router, Route, Link, IndexRoute} from 'react-router';
+import Home from './HomeComp';
+import About from './AboutComp';
+import Contact from './ContactComp';
+
+const App = React.createClass({
+	render() {
+		return (
+			<div>
+				<Link to="/">Home</Link>
+				<Link to="/about">About</Link>
+				<Link to="/contact">Contact</Link>
+
+				{this.props.children}
+
+			</div>
+		)
+	}
+});
+
+ReactDOM.render(
+	<Router>
+		<Route component={App} path='/'>
+			<IndexRoute component={Home}/>
+			<Route component={About} path='about'/>
+			<Route component={Contact} path='contact'/>
+		</Route>
+	</Router>,
+	document.getElementById('app')
+);
+
 // create an App component for our application
 // render it to the DOM
 // add 3 links with the following hrefs: '#/', '#/about', '#/contact'
@@ -33,7 +66,7 @@
 //   <Route component={App} path='/'>
 //     <Route component={Home} path='home' />
 //     <Route component={About} path='about' />
-//     <Route component={Content} path='content' />
+//     <Route component={Contact} path='contact' />
 //   </Route>
 // </Router>
 
