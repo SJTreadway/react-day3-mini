@@ -83,7 +83,7 @@
 				),
 				_react2.default.createElement(
 					_reactRouter.Link,
-					{ to: '/about' },
+					{ to: '/about/steven' },
 					'About'
 				),
 				_react2.default.createElement(
@@ -103,7 +103,7 @@
 			_reactRouter.Route,
 			{ component: App, path: '/' },
 			_react2.default.createElement(_reactRouter.IndexRoute, { component: _HomeComp2.default }),
-			_react2.default.createElement(_reactRouter.Route, { component: _AboutComp2.default, path: 'about' }),
+			_react2.default.createElement(_reactRouter.Route, { component: _AboutComp2.default, path: 'about/:name' }),
 			_react2.default.createElement(_reactRouter.Route, { component: _ContactComp2.default, path: 'contact' })
 		)
 	), document.getElementById('app'));
@@ -24141,7 +24141,8 @@
 				_react2.default.createElement(
 					'h1',
 					null,
-					'About'
+					'About ',
+					this.props.params.name
 				)
 			);
 		}

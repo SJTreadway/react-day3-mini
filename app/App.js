@@ -10,7 +10,7 @@ const App = React.createClass({
 		return (
 			<div>
 				<Link to="/">Home</Link>
-				<Link to="/about">About</Link>
+				<Link to="/about/steven">About</Link>
 				<Link to="/contact">Contact</Link>
 
 				{this.props.children}
@@ -24,7 +24,7 @@ ReactDOM.render(
 	<Router>
 		<Route component={App} path='/'>
 			<IndexRoute component={Home}/>
-			<Route component={About} path='about'/>
+			<Route component={About} path='about/:name'/>
 			<Route component={Contact} path='contact'/>
 		</Route>
 	</Router>,
